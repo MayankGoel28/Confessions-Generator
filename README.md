@@ -17,10 +17,10 @@ This software generates a sarcastic / humurous confession which is often seen in
 
 ## Creaters
 
-* @MayankGoel28 : Mayank Goel
-* @SmartyPants042   : Tanishq Chaudhary
-* @prajneya   : Prajneya Kumar
-* @AurumnPegasus : Shivansh Subramanian
+* MayankGoel28 : Mayank Goel
+* SmartyPants042   : Tanishq Chaudhary
+* prajneya   : Prajneya Kumar
+* AurumnPegasus : Shivansh Subramanian
 
 
 ## References
