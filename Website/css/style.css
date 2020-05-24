@@ -188,6 +188,22 @@ h2{
   text-align: center;
 }
 
+.submit button{
+  font-family: 'Jost', sans-serif;
+  padding: 1vw;
+  border-radius: 15px;
+  background-color: white;
+  color: blue;
+  transition: background-color .2s;
+  font-weight: bold;
+}
+
+.submit button:hover{
+  background-color: tomato;
+  color: black;
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 890px){
   .mobile-logo img{
     display: block;
