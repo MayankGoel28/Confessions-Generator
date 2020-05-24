@@ -18,20 +18,20 @@
         <input type="text" placeholder="Enter phrase"/>
         <div class="c-radio">
           <div class="c-radio-1">
-            <input type="radio" id="male" name="c-size" value="short">
+            <input type="radio" id="short" name="c-size" value="short">
             <label for="short">Short</label>
           </div>
           <div class="c-radio-2">
-            <input type="radio" id="female" name="c-size" value="medium">
+            <input type="radio" id="medium" name="c-size" value="medium">
             <label for="medium">Medium</label>
           </div>
           <div class="c-radio-3">
-            <input type="radio" id="other" name="c-size" value="long">
+            <input type="radio" id="long" name="c-size" value="long">
             <label for="long">Long</label>
           </div>
         </div>
         <div class="generate">
-          <button type="button" name="button" onclick="cCard()">GENERATE CONFESSION</button>
+          <button type="button" name="button" onclick="generateConfession()">GENERATE CONFESSION</button>
         </div>
       </div>
       <div class="menu">
@@ -67,13 +67,15 @@
 
     <div class="card" id="team-card">
       <h2>THESE ARE THE PEOPLE WHO WERE REALLY BORED</h2> <br>
-      
+
     </div>
 
     <div class="card" id="confession-card">
-      <img src="loading.gif" alt="">
+      <!-- <div id="loading">
+        <img src="loading.gif" alt="">
+      </div> -->
+      <div id="confession"></div>
     </div>
-
     <script type="text/javascript" src="script.js">
 
     </script>
