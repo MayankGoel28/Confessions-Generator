@@ -14,3 +14,6 @@ We have used a LSTM model with embeddings to capture character level dependencie
   After the model has been trained for sufficient number of epochs, we start our database generation. We now give the model an emoty string to work upon, and it generates character after character. It looks like a sci-fi movie in real time!
 
 ## Website
+
+To display our model, we designed a Vanilla web application, which can be accessed at: https://prajneya.github.io/Confessions-Generator/ . This web-app serves as a single page application, where the user can input a name on which they desire the confession to be generated. We do not run the model each time the user wants to generate a confession, since it would lead to a huge consumption on the backend, making the application slower, especially on devices with low-bandwidth internet connections. Recognizing this problem, the model generates a large number of confessions, which are stored in a .json file. The website fetches confessions from this file and uses local browser cookies to remember which confession has already been displayed, thus displaying a new confession each time.
+
