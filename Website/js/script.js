@@ -9,6 +9,12 @@ function teamCard(){
 }
 
 function generateConfession(){
+
+  if(document.getElementById("short").checked!=true && document.getElementById("medium").checked!=true && document.getElementById("long").checked!=true){
+    alert("Please select a confession length!");
+    return false;
+  }
+
   document.getElementById("overlay").style.display = "block";
   document.getElementById("confession-card").style.display = "block";
 
@@ -61,10 +67,6 @@ function generateConfession(){
     document.getElementById("confession").innerHTML = longData.content[lcount];
     console.log(longData.content[lcount]);
 
-  }
-  else{
-    alert("Please select a confession length!");
-    return false;
   }
 
 }
