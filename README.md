@@ -1,18 +1,18 @@
 # Confessions Generator
 
-This software generates a sarcastic / humurous confession which is often seen in confession pages of undergraduate colleges based on some parameters as required by the user.
+This software generates a sarcastic / humurous confession which is often seen in confession pages of undergraduate colleges. It is based on some parameters as requested by the user.
 
 ## How it works
 
 * Go to the website https://github.com/AurumnPegasus/Confessions-Generator ( have to replace with actual website link )
 
-* Enter the required parameters.
+* Enter the Name.
 
-* Select the length of desired confession.
+* Select the length of desired confession : Small / Medium / Large
 
-* Profit !
+* Have Fun !
 
-**The confession generating model is trained on 20k+ confessions which were put up by anonymous users in leading US tech colleges**
+**The confession generating model is trained on 20k+ confessions which were put up by anonymous users in leading tech colleges**
 
 
 ## Creaters
@@ -26,3 +26,4 @@ This software generates a sarcastic / humurous confession which is often seen in
 ## References
 
 * For scraping from facebook confessions group : https://github.com/Uplyft-Map/fb-scraper
+* For the Neural Network: https://www.tensorflow.org/tutorials/text/text_generation
