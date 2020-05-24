@@ -4,7 +4,7 @@ This software generates a sarcastic / humurous confession which is often seen in
 
 ## How it works
 
-* Go to the website https://github.com/AurumnPegasus/Confessions-Generator ( have to replace with actual website link )
+* Go to the website https://prajneya.github.io/Confessions-Generator/
 
 * Enter the Name.
 

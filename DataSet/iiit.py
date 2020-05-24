@@ -47,14 +47,14 @@ for i in data_confession:
     for j in current_country:
         myregex = r"\b" + re.escape(str(j)) + r"\b"
         sent = re.sub(myregex, "india", sent)
-    sent = re.sub(r"\bFreshman\b", "first year", sent)
-    sent = re.sub(r"\bfreshmen\b", "first years", sent)
+    sent = re.sub(r"\bFreshman\b", "facha", sent)
+    sent = re.sub(r"\bfreshmen\b", "fache", sent)
     sent = re.sub(r"\bSophomore\b", "second year", sent)
     sent = re.sub(r"\bsophomores\b", "second years", sent)
     sent = re.sub(r"\btution", "fees", sent)
-    # searching for currencies
     sent = sent[3:]
     sent = sent[:len(sent)-3]
     sent = sent + "\n"
     file1.write(sent)
 
+file1.close()
