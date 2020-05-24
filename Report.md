@@ -18,3 +18,10 @@ For one final layer of checking, we pass the database through a python script, a
 
 To display our model, we designed a Vanilla web application, which can be accessed at https://prajneya.github.io/Confessions-Generator/ . This web-app serves as a single page application, where the user can input a name on which they desire the confession to be generated. We do not run the model each time the user wants to generate a confession, since it would lead to a huge consumption on the backend, making the application slower, especially on devices with low-bandwidth internet connections. Recognizing this problem, the model generates a large number of confessions, which are stored in a .json file. The website fetches confessions from this file and uses local browser cookies to remember which confession has already been displayed, thus displaying a new confession each time.
 
+## Screenshots from the website
+
+![Screenshot-20200525001433-1919x1018](https://user-images.githubusercontent.com/54315149/82762175-2a59f480-9e1d-11ea-84e8-a7b23b3fe73f.png)
+
+![WhatsApp Image 2020-05-25 at 00 15 41](https://user-images.githubusercontent.com/54315149/82762169-2037f600-9e1d-11ea-8599-24504a4e7d9f.jpeg)
+
+
