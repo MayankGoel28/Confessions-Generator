@@ -1,5 +1,5 @@
 import nltk
-from nltk.tokenize import WordPunctTokenizer
+from nltk.tokenize import word_tokenize
 import re
 import csv
 colleges = []
@@ -8,7 +8,6 @@ university_p = ["universities","UNIVERSITIES", "Universities", "schools", "Schoo
 current_country = ["USA", "usa", "United States", "united states", "america", "America", "The USA", "the usa", "The US", "the us", "The United States of America", "United States of America",
     "the united states", "the United States", "AMERICA", "UNITED STATES"]
   
-tokenizer = WordPunctTokenizer() 
 with open('college_list.csv', newline='') as f:
     reader_colleges = csv.reader(f)
     data_colleges = list(reader_colleges)
@@ -28,8 +27,12 @@ with open('test.csv', newline='') as f:
 
 file1 = open("iiit_source.txt","w+")
 counter = 0
+c = 0
 for i in data_confession:
     sent = str(i)
+    if(c==0):
+        c+=1
+        continue
     for j in colleges:
         myregex = r"\b" + re.escape(str(j)) + r"\b"
         sent = re.sub(myregex, "iiit", sent)
@@ -49,5 +52,9 @@ for i in data_confession:
     sent = re.sub(r"\bSophomore\b", "second year", sent)
     sent = re.sub(r"\bsophomores\b", "second years", sent)
     sent = re.sub(r"\btution", "fees", sent)
+    # searching for currencies
+    sent = sent[3:]
+    sent = sent[:len(sent)-3]
+    sent = sent + "\n"
     file1.write(sent)
 
