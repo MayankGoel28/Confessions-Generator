@@ -18,6 +18,7 @@ for i in raw_tex_l:
     if(i == ']'):
         list_of_confessions.append(confession)
         make_string = False
+        confession = ""
     if(make_string):
         confession += i
     if(i == '['):
@@ -33,25 +34,25 @@ n = 0
 s = 0
 m = 0
 la = 0
+check = []
+conf = []
 
 for i in list_of_confessions:
     sentences = sent_tokenize(i)
-    conf = []
 
     # removing repeating sentences
     for j in sentences:
         sent = []
         words = word_tokenize(j)
-
         # removing repating words
-        for k in words:
-            word_exists = True
-            for l in sent:
-                if(l == k):
-                    word_exists = False
-                    break
-            if(word_exists):
-                sent.append(k)
+        for k in range(0, len(words)-1):
+            current_word = words[k]
+            next_word = words[k+1]
+            if(current_word != next_word):
+                sent.append(current_word)
+            else:
+                pass
+
         exist = True
         for k in conf:
             if(k == sent):
@@ -60,24 +61,31 @@ for i in list_of_confessions:
         if exist:
             conf.append(sent)
 
-    # recreating confessions
-    f_conf = "[\""
-    count = 0
-    for j in conf:
-        for k in j:
-            if(k == ',' or k == '.' or (k[0] == '\'' and len(k) > 1) ):
-                f_conf = f_conf + str(k)
-            else:
-                f_conf = f_conf + " " + str(k)
-        f_conf = f_conf + "\n"
-        count += 1
+# recreating confessions
+f_conf = "[\""
+count = 0
+for j in conf:
+    for k in j:
+        if(k == ',' or k == '.' or (k[0] == '\'' and len(k) > 1) ):
+            f_conf = f_conf + str(k)
+        else:
+            f_conf = f_conf + " " + str(k)
+    f_conf = f_conf + "\n"
+    count += 1
 
-        # splitting each confession to 10 lines
-        if(count == 10):
-            f_conf = f_conf + "\"]\n"      
-            len_of_confession = len(f_conf)
-            c+= len_of_confession
-            n+=1
+    # splitting each confession to 10 lines
+    if(count == 10):
+        f_conf = f_conf + "\"]\n"      
+        len_of_confession = len(f_conf)
+        do_I = True
+        for k in check:
+            if(k == f_conf):
+                do_I = False
+                break
+        if do_I:
+            check.append(f_conf)
+            c += len_of_confession
+            n +=1
             if(len_of_confession <= SMALL):
                 file_s_2.write(f_conf)
                 s+=1
@@ -87,28 +95,11 @@ for i in list_of_confessions:
             else:
                 file_l_2.write(f_conf)
                 la+=1
-            count = 0
-            f_conf = "[\""
-    f_conf = f_conf + "\"]\n"      
-    len_of_confession = len(f_conf)
-    c+=len_of_confession
-    n+=1
-    if(len_of_confession<=10):
-        pass
-    elif(len_of_confession <= SMALL):
-        file_s_2.write(f_conf)
-        s+=1
-    elif(len_of_confession<= MEDIUM):
-        file_m_2.write(f_conf)
-        m+=1
-    else:
-        file_l_2.write(f_conf)
-        la +=1
-    count = 0
-    f_conf = "[\""
+        count = 0
+        f_conf = "[\""
+    
 
-
-c = c/n
+# c = c/n
 #print(c)
 print(s)
 print(m)
